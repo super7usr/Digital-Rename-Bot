@@ -12,6 +12,9 @@ COPY requirements.txt .
 # Install any needed dependencies specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
+#try for ffmpeg 
+RUN heroku buildpacks:add https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
+     
 # Copy the rest of the application code to the working directory
 COPY . .
 
