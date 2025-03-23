@@ -4,6 +4,7 @@ cd /rename
 pip3 install -U -r requirements.txt
 echo "Starting Bot...."
 pip install ffmpeg
+heroku buildpacks:add https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
 python3 bot.py
 echo "jenna ortega"
 echo "started"
