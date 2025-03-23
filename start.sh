@@ -1,8 +1,17 @@
-echo "Cloning Jenna Repository"
-git clone https://github.com/super7usr/Digital-Rename-Bot /rename
-cd /rename
+echo "Cloning Repository"
+git clone https://github.com/super7usr/Digital-Rename-Bot ~/rename
+cd ~/rename
+
+# Check and install Homebrew
+which brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew tap heroku/brew && brew install heroku
-sudo snap install --classic heroku
+
+# Check and install sudo
+which sudo || apt-get install sudo -y
+
+# Check and install Heroku CLI
+which heroku || curl https://cli-assets.heroku.com/install.sh | sh
+
 pip3 install -U -r requirements.txt
 echo "Starting Bot...."
 pip install ffmpeg
